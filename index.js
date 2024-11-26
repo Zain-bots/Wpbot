@@ -122,6 +122,8 @@ conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/h5ddpq.
 }
 })
 conn.ev.on('creds.update', saveCreds)  
+        
+//=============readstatus=======
 
 conn.ev.on('messages.upsert', async(mek) => {
 mek = mek.messages[0]
@@ -180,26 +182,7 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
                 return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted, ...options })
               }
             }
-//================ownerreact
-if(senderNumber.includes("923096287432")){
-if(isReact) return
-m.react("👑")
-}
 
-if(senderNumber.includes("923154647639")){
-if(isReact) return
-m.react("👑")
-}
-
-if(senderNumber.includes("923251869133")){
-if(isReact) return
-m.react("🦋")
-   }
-
-if(senderNumber.includes("447783770746")){
-if(isReact) return
-m.react("🎀")
-   }
 //==========================public react===============//
 // Auto React 
 if (!isReact && senderNumber !== botNumber) {
